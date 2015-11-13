@@ -6,8 +6,8 @@
 
 
 
-// B A S E : variables, reset, mq, defaults
-// --------------------------------------------
+// B A S E : variables, reset, mediaqueries, defaults
+// -----------------------------------------------------
 
   @import "base/_variables";
   @import "base/_normalize";
@@ -16,16 +16,14 @@
 
 
 // U T I L I T I E S: Grid System, Containers, Helpers
-// --------------------------------------------
+// ------------------------------------------------------
 
   @import "utilities/_grid-system";  // Bootstrap 3
-  @import "utilities/_layout-helpers";
-  @import "utilities/_containers";
-  @import "utilities/_typeography";
-  @import "utilities/_misc-helpers";
+  @import "utilities/_helpers-layout";
+  @import "utilities/_helpers-misc";
 
 
-// B L O C K S: Sections, reusable code, patterns
-// --------------------------------------------
+// B L O C K S: reusable blocks / components
+// ------------------------------------------------------
 
   @import "blocks/_buttons";
