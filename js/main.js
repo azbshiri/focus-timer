@@ -39,6 +39,9 @@ function startCountdown() {
   clearInterval(timerInterval);
   // set interval for each second of countdown
   timerInterval = setInterval(tick, 1000);
+
+  // hide input
+  document.getElementById("minutes").value = "";
 }
 
 
@@ -69,8 +72,9 @@ window.onload = function () {
 
 // To Do:
 
-// hide timer amount
 // prevent clock from shifting position when less then 10 minutes
-// create background style
+// add page styles
+// add background image
 // add pause and reset buttons
 // add sound
+// fade value in input when starting timer
