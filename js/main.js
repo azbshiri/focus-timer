@@ -1,8 +1,10 @@
 // Create a countdown timer for work sessions and to remind you to get up and walk around
 
+
 // Global Variables
 var secondsRemaining;
 var timerInterval;
+
 
 function tick() {
   // grab the timer
@@ -11,6 +13,10 @@ function tick() {
   // convert seconds into MM:SS
   var min = Math.floor(secondsRemaining / 60);
   var sec = secondsRemaining - (min * 60);
+
+  if (min < 10) {
+    min = "0" + min;
+  }
 
   // Check to see if seconds is less than 10
   if (sec < 10) {
@@ -28,6 +34,7 @@ function tick() {
   // reduce 1 second with each interval
   secondsRemaining--;
 }
+
 
 function startCountdown() {
   // get value of input
@@ -72,7 +79,7 @@ window.onload = function () {
 
 // To Do:
 
-// prevent clock from shifting position when less then 10 minutes
+// Make sure it's not
 // add page styles
 // add background image
 // add pause and reset buttons
