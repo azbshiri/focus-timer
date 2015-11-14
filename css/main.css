@@ -377,6 +377,22 @@ img {
 [role="button"] {
   cursor: pointer; }
 
+input {
+  background: #d24dff;
+  border: none;
+  padding: 15px;
+  border-radius: 2px;
+  margin: 10px;
+  color: white; }
+  input:focus {
+    outline: none;
+    background: #d966ff; }
+
+input[type="button"] {
+  background: #4d0066; }
+  input[type="button"]:hover {
+    background: #580075; }
+
 .row-no-padding [class*="col-"] {
   padding-left: 0 !important;
   padding-right: 0 !important; }

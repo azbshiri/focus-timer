@@ -29,8 +29,6 @@
 // -------------------------
 
 
-
-
 // Paragraphs
 // -------------------------
 
@@ -118,11 +116,27 @@ img {
 // Forms
 // **************************************************
 
+input {
+  background: $base-light;
+  border: none;
+  padding: 15px;
+  border-radius: 2px;
+  margin: 10px;
+  color: white;
+  &:focus {
+    outline:none;
+    background: $base-xlight;
+  }
+}
+
+input[type="button"] {
+  background: $base-xdark;
+  &:hover {
+    background: $base-dark;
+  }
+}
 
 // label {}
-
-
-// input,
 // button,
 // select,
 // textarea { }
