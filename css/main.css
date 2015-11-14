@@ -362,6 +362,9 @@ th {
 body {
   background: #9900cc; }
 
+h1 {
+  font-size: 200px; }
+
 p {
   margin-top: 0;
   margin-bottom: 1rem; }
@@ -1078,9 +1081,6 @@ input[type="button"] {
   text-align: center;
   padding-top: 50px;
   color: white; }
-  .container h1 {
-    font-size: 200px;
-    margin: 0; }
 
 .clearfix:after {
   content: "";
