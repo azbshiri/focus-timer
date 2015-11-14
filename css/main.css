@@ -359,6 +359,9 @@ th {
 * {
   box-sizing: border-box; }
 
+body {
+  background: #9900cc; }
+
 p {
   margin-top: 0;
   margin-bottom: 1rem; }
