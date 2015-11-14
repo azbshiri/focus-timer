@@ -13,11 +13,11 @@
 // Colors
 // -------------------------
 
-$base:              #000;
-$base-xlight:       white;
-$base-light:        white;
-$base-dark:         gray;
-$base-xdark:        black;
+$base: #9900cc;
+$base-dark: darken($base, 17%);
+$base-xdark: darken($base, 20%);
+$base-light: lighten($base, 25%);
+$base-xlight: lighten($base, 30%);
 
 
 
