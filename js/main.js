@@ -4,14 +4,12 @@
 // Global Variables
 var secondsRemaining;
 var timerInterval;
-var focusBackground;
-var breakBackground;
+var stateSetting;
 
 
 function resetTimer() {
   // reset background images
-  focusBackground.classList.remove("slideAway");
-  breakBackground.classList.remove("slideUp");
+  stateSetting.classList.remove("state-rotate");
   // reset minutes input with placeholder text
   document.getElementById("minutes").value = "";
 }
@@ -20,12 +18,10 @@ function startBreak() {
   // play sound when time is up!
   var audio = document.getElementsByTagName("audio")[0];
   audio.play();
-  // hide desk
-  focusBackground = document.getElementById('focus-background');
-  focusBackground.classList.add("slideAway");
-  // show coffee cup
-  breakBackground = document.getElementById('break-background');
-  breakBackground.classList.add("slideUp");
+  // rotate state setting
+  stateSetting = document.getElementById("background-setting");
+  stateSetting.classList.add("state-rotate");
+
   document.getElementById("minutes").value = "Enjoy your break!";
 
   setTimeout( resetTimer, 5000);

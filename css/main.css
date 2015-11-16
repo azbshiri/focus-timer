@@ -360,7 +360,7 @@ th {
   box-sizing: border-box; }
 
 body {
-  background: #00979B;
+  background: #00979B url("/img/noise.png");
   padding-top: 40px; }
 
 p {
@@ -1184,20 +1184,12 @@ input::-webkit-inner-spin-button {
     .timer-display {
       font-size: 140px; } }
 
-.state-focus {
+.state-setting {
   position: fixed;
-  bottom: 0;
+  bottom: -405px;
   left: 50%;
-  transform: translateX(-50%);
-  margin: 0 auto;
-  transition: .3s; }
-
-.state-break {
-  position: fixed;
-  bottom: -100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0 auto; }
+  transform: translateX(-50%) rotate(-180deg);
+  transition: transform 1s; }
 
 .state-floor {
   position: fixed;
@@ -1206,21 +1198,5 @@ input::-webkit-inner-spin-button {
   width: 100%;
   background: rgba(0, 0, 0, 0.2); }
 
-.slideAway {
-  animation: slideAway .5s forwards ease-out; }
-
-@keyframes slideAway {
-  0% {
-    transform: translateX(-50%, 0);
-    opacity: 100%; }
-  100% {
-    transform: translate(-50%, 500px);
-    display: none; } }
-.slideUp {
-  animation: slideUp .5s .5s forwards ease-out; }
-
-@keyframes slideUp {
-  0% {
-    bottom: -500px; }
-  100% {
-    bottom: 0; } }
+.state-rotate {
+  transform: translateX(-50%) rotate(0deg); }
