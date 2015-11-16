@@ -1,0 +1,60 @@
+// **************************************************
+// Name: states.scss
+// Description: svg and style for different timer states
+// **************************************************
+
+
+// Focus State
+
+.state-focus {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  transition: .3s;
+}
+
+.state-break {
+  position: fixed;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+}
+
+.state-floor {
+  position: fixed;
+  bottom: 0;
+  height: 30px;
+  width: 100%;
+  background: rgba(black, .2);
+}
+
+.slideAway {
+    animation: slideAway .5s forwards ease-out;
+}
+
+@keyframes slideAway {
+  0% {
+    transform: translateX(-50%, 0);
+    opacity: 100%;
+  }
+  100% {
+    transform: translate(-50%, 500px);
+    display: none;
+  }
+}
+
+.slideUp {
+  animation: slideUp .5s .5s forwards ease-out;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: -500px;
+  }
+  100% {
+    bottom: 0;
+  }
+}

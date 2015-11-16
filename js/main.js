@@ -4,7 +4,30 @@
 // Global Variables
 var secondsRemaining;
 var timerInterval;
+var focusBackground;
+var breakBackground;
 
+
+function resetTimer() {
+  // reset background images
+  focusBackground.classList.remove("slideAway");
+  breakBackground.classList.remove("slideUp");
+  // reset minutes input with placeholder text
+  document.getElementById("minutes").value = "";
+}
+
+function startBreak() {
+  // hide desk
+  focusBackground = document.getElementById('focus-background');
+  focusBackground.classList.add("slideAway");
+  // show coffee cup
+  breakBackground = document.getElementById('break-background');
+  breakBackground.classList.add("slideUp");
+  document.getElementById("minutes").value = "Treat yo self!";
+
+  setTimeout( resetTimer, 5000);
+
+}
 
 function tick() {
   // grab the timer
@@ -30,6 +53,7 @@ function tick() {
   // stop timer interval function when it reaches 0
   if (secondsRemaining === 0) {
     clearInterval(timerInterval);
+    startBreak();
   }
   // reduce 1 second with each interval
   secondsRemaining--;
@@ -42,46 +66,40 @@ function startCountdown() {
   // calculate seconds remaining
   secondsRemaining = minutes * 60;
 
-  // clear interval if in progress
+
+  // Check to make sure it's a positive number
+  if (secondsRemaining < 0 || isNaN(minutes) || minutes === "") {
+    document.getElementById("minutes").value = "";
+    document.getElementById("time-display").innHTML = "WHAT";
+    return;
+  }
+
+  // clear interval if already in progress
   clearInterval(timerInterval);
   // set interval for each second of countdown
   timerInterval = setInterval(tick, 1000);
 
-  // hide input
-  document.getElementById("minutes").value = "";
+  // set message for input while working
+  if (minutes === "1") {
+    document.getElementById("minutes").value = "Focusing for " + minutes + " minute.";
+  } else {
+    document.getElementById("minutes").value = "Focusing for " + minutes + " minutes.";
+  }
 }
 
 
 // run code once window has loaded
 window.onload = function () {
 
-  // Create Input Element
-  var inputMinutes = document.createElement("input");
-  inputMinutes.setAttribute("id", "minutes");
-  inputMinutes.setAttribute("type", "text");
-
-  // Create Button Element
-  var startButton = document.createElement("input");
-  startButton.setAttribute("value","Start Timer");
-  startButton.setAttribute("type","button");
-
-  // Append new DOM elements
-  document.getElementById('timer-area').appendChild(inputMinutes);
-  document.getElementById('timer-area').appendChild(startButton);
-
-  // CLick event for start button
+  var startButton = document.getElementById("start");
+  // Cick event for start button
   startButton.addEventListener("click", startCountdown);
 };
 
 
 
-
-
-// To Do:
-
-// Make sure it's not
-// add page styles
-// add background image
+// Bugs
+// Nan:Nan issue when clicking start timer button multiple times..
 // add pause and reset buttons
 // add sound
 // fade value in input when starting timer

@@ -21,6 +21,7 @@
 
 body {
   background: $base;
+  padding-top: 40px;
 }
 
 // **************************************************
@@ -30,9 +31,6 @@ body {
 // Headlines
 // -------------------------
 
-h1 {
-  font-size: 200px;
-}
 
 // Paragraphs
 // -------------------------
@@ -122,24 +120,31 @@ img {
 // **************************************************
 
 input {
-  background: $base-light;
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
   border: none;
-  padding: 15px;
-  border-radius: 2px;
-  margin: 10px;
   color: white;
+  letter-spacing: .05rem;
   &:focus {
-    outline:none;
-    background: $base-xlight;
+    outline: 0;
   }
 }
 
-input[type="button"] {
-  background: $base-xdark;
-  &:hover {
-    background: $base-dark;
-  }
+::-webkit-input-placeholder { color: white;}
+:-moz-placeholder { color: white; }
+::-moz-placeholder { color: white; }
+:-ms-input-placeholder { color: white; }
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
+
 
 // label {}
 // button,
