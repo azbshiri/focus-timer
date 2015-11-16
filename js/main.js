@@ -17,6 +17,9 @@ function resetTimer() {
 }
 
 function startBreak() {
+  // play sound when time is up!
+  var audio = document.getElementsByTagName("audio")[0];
+  audio.play();
   // hide desk
   focusBackground = document.getElementById('focus-background');
   focusBackground.classList.add("slideAway");
@@ -84,7 +87,7 @@ function startCountdown() {
   if (minutes === "1") {
     document.getElementById("minutes").value = "Working for " + minutes + " minute";
   } else {
-    document.getElementById("minutes").value = "Working for " + minutes + " minutes.";
+    document.getElementById("minutes").value = "Working for " + minutes + " minutes";
   }
 }
 
