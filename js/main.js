@@ -70,7 +70,8 @@ function startCountdown() {
   // Check to make sure it's a positive number
   if (secondsRemaining < 0 || isNaN(minutes) || minutes === "") {
     document.getElementById("minutes").value = "";
-    document.getElementById("time-display").innHTML = "WHAT";
+    document.getElementById("time-display").innerHTML = "00:00";
+    clearInterval(timerInterval);
     return;
   }
 
