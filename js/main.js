@@ -54,7 +54,7 @@ function tick() {
   timeDisplay.innerHTML = message;
 
   // stop timer interval function when it reaches 0
-  if (secondsRemaining === 0) {
+  if (secondsRemaining === 59) {
     clearInterval(timerInterval);
     startBreak();
   }
