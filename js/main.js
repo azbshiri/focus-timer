@@ -23,7 +23,7 @@ function startBreak() {
   // show coffee cup
   breakBackground = document.getElementById('break-background');
   breakBackground.classList.add("slideUp");
-  document.getElementById("minutes").value = "Treat yo self!";
+  document.getElementById("minutes").value = "Enjoy your break!";
 
   setTimeout( resetTimer, 5000);
 
@@ -82,9 +82,9 @@ function startCountdown() {
 
   // set message for input while working
   if (minutes === "1") {
-    document.getElementById("minutes").value = "Focusing for " + minutes + " minute.";
+    document.getElementById("minutes").value = "Working for " + minutes + " minute";
   } else {
-    document.getElementById("minutes").value = "Focusing for " + minutes + " minutes.";
+    document.getElementById("minutes").value = "Working for " + minutes + " minutes.";
   }
 }
 
