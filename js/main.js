@@ -1,13 +1,12 @@
 // Create a countdown timer for work sessions and to remind you to get up and walk around
 
-
-// Global Variables
 var secondsRemaining;
 var timerInterval;
 var stateSetting;
+var paused = false;
 
 
-function resetTimer() {
+function resetPage() {
   // reset background images
   stateSetting.classList.remove("state-rotate");
   // reset minutes input with placeholder text
@@ -15,6 +14,7 @@ function resetTimer() {
 }
 
 function startBreak() {
+
   // play sound when time is up!
   var audio = document.getElementsByTagName("audio")[0];
   audio.play();
@@ -23,13 +23,10 @@ function startBreak() {
   stateSetting.classList.add("state-rotate");
 
   document.getElementById("minutes").value = "Enjoy your break!";
-
-  setTimeout( resetTimer, 5000);
-
+  setTimeout(resetPage, 5000);
 }
 
 function tick() {
-  // grab the timer
   var timeDisplay = document.getElementById("time-display");
 
   // convert seconds into MM:SS
@@ -39,6 +36,7 @@ function tick() {
   if (min < 10) {
     min = "0" + min;
   }
+
 
   // Check to see if seconds is less than 10
   if (sec < 10) {
@@ -50,7 +48,7 @@ function tick() {
   timeDisplay.innerHTML = message;
 
   // stop timer interval function when it reaches 0
-  if (secondsRemaining === 59) {
+  if (secondsRemaining === 58) {
     clearInterval(timerInterval);
     startBreak();
   }
@@ -59,14 +57,13 @@ function tick() {
 }
 
 
-function startCountdown() {
-  // get value of input
+function startTimer() {
   var minutes = document.getElementById("minutes").value;
-  // calculate seconds remaining
+
+  // convert minutes to seconds
   secondsRemaining = minutes * 60;
 
-
-  // Check to make sure it's a positive number
+  // validate minutes input
   if (secondsRemaining < 0 || isNaN(minutes) || minutes === "") {
     document.getElementById("minutes").value = "";
     document.getElementById("time-display").innerHTML = "00:00";
@@ -79,21 +76,45 @@ function startCountdown() {
   // set interval for each second of countdown
   timerInterval = setInterval(tick, 1000);
 
-  // set message for input while working
-  if (minutes === "1") {
-    document.getElementById("minutes").value = "Working for " + minutes + " minute";
-  } else {
-    document.getElementById("minutes").value = "Working for " + minutes + " minutes";
+}
+
+function pauseTimer() {
+  if (secondsRemaining > 0) {
+    if (paused === false) {
+      paused = true;
+      this.value = "Resume";
+      clearInterval(timerInterval);
+    } else {
+      paused = false;
+      this.value = "Pause";
+      timerInterval = setInterval(tick, 1000);
+    }
   }
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  document.getElementById("minutes").value = "";
+  document.getElementById("time-display").innerHTML = "00:00";
 }
 
 
 // run code once window has loaded
 window.onload = function () {
 
+  // Event Listeners for Timer Controls
   var startButton = document.getElementById("start");
-  // Cick event for start button
-  startButton.addEventListener("click", startCountdown);
+  startButton.addEventListener("click", startTimer);
+
+  //var userInput = document.getElementById('minutes');
+  //userInput.addEventListener("keypress", startTimer);
+
+  var stopButton = document.getElementById('stop');
+  stopButton.addEventListener("click", pauseTimer);
+
+  var resetButton = document.getElementById('reset');
+  resetButton.addEventListener("click", resetTimer);
+
 };
 
 

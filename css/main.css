@@ -360,7 +360,7 @@ th {
   box-sizing: border-box; }
 
 body {
-  background: #00979B url("/img/noise.png");
+  background: #C9329E url("/img/noise.png");
   padding-top: 40px; }
 
 p {
@@ -1186,10 +1186,19 @@ input::-webkit-inner-spin-button {
 
 .state-setting {
   position: fixed;
-  bottom: -405px;
+  bottom: -185px;
   left: 50%;
   transform: translateX(-50%) rotate(-180deg);
-  transition: transform 1s; }
+  transition: transform 1s;
+  width: 300px; }
+  @media (min-width: 768px) {
+    .state-setting {
+      width: 500px;
+      bottom: -310px; } }
+  @media (min-width: 992px) {
+    .state-setting {
+      width: 700px;
+      bottom: -435px; } }
 
 .state-floor {
   position: fixed;

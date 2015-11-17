@@ -7,10 +7,20 @@
 
 .state-setting {
   position: fixed;
-  bottom: -405px;
+  bottom: -185px;
   left: 50%;
   transform: translateX(-50%) rotate(-180deg);
   transition: transform 1s;
+  width: 300px;
+
+  @include mq(sm) {
+    width: 500px;
+    bottom: -310px;
+  }
+  @include mq(md) {
+    width: 700px;
+    bottom: -435px;
+  }
 }
 
 .state-floor {

@@ -18,11 +18,11 @@
           	<source src="sounds/timer-bell.ogg"></source>
           </audio>
 
-          <input id="minutes" class="timer-input" type="text" name="minutes" placeholder="How many minutes?"></input>
+          <input id="minutes" class="timer-input" type="number" name="minutes" placeholder="How many minutes?" autocomplete="off"></input>
           <div class="timer-controls">
-            <input class="timer-button" type="button" value="Pause"></input>
+            <input id="stop" class="timer-button" type="button" value="Pause"></input>
             <input id="start" class="timer-button timer-start" type="button" value="Start Timer"></input>
-            <input class="timer-button" type="button" value="Reset"></input>
+            <input id="reset" class="timer-button" type="button" value="Reset"></input>
           </div>
           <h1 id="time-display" class="timer-display">00:00</h1>
         </div>
