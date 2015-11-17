@@ -22,9 +22,10 @@ function startBreak() {
   stateSetting = document.getElementById("background-setting");
   stateSetting.classList.add("state-rotate");
 
-  document.getElementById("minutes").value = "Enjoy your break!";
+  document.getElementById("minutes").value = "Enjoy your break";
   setTimeout(resetPage, 5000);
 }
+
 
 function tick() {
   var timeDisplay = document.getElementById("time-display");
@@ -48,7 +49,7 @@ function tick() {
   timeDisplay.innerHTML = message;
 
   // stop timer interval function when it reaches 0
-  if (secondsRemaining === 58) {
+  if (secondsRemaining === 0) {
     clearInterval(timerInterval);
     startBreak();
   }
@@ -98,16 +99,12 @@ function resetTimer() {
   document.getElementById("time-display").innerHTML = "00:00";
 }
 
-
 // run code once window has loaded
 window.onload = function () {
 
   // Event Listeners for Timer Controls
   var startButton = document.getElementById("start");
   startButton.addEventListener("click", startTimer);
-
-  //var userInput = document.getElementById('minutes');
-  //userInput.addEventListener("keypress", startTimer);
 
   var stopButton = document.getElementById('stop');
   stopButton.addEventListener("click", pauseTimer);
