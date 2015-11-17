@@ -1,0 +1,67 @@
+// **************************************************
+// Name: timer.scss
+// Description: buttons styles, <a> & <button>
+// **************************************************
+
+.timer-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timer-input {
+  width: 100%;
+  padding: 25px;
+  background: rgba(white, .25);
+  border: none;
+  box-shadow: 0 0 10px rgba(black, .1);
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  @include mq(md) {
+    font-size: 20px;
+  }
+  &:active, &:focus {
+    background: rgba(white, .3);
+  }
+}
+
+.timer-controls {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
+.timer-button {
+  background: rgba(black, .1);
+  width: 30%;
+  padding: 15px;
+  font-size: 12px;
+  @include mq(md) {
+    font-size: 14px;
+  }
+  &:hover {
+    background: rgba(black, .15);
+  }
+}
+
+.timer-start {
+  background: $accent;
+  &:hover {
+    background: $accent-dark;
+  }
+}
+
+.timer-display {
+  display: block;
+  line-height: 1;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100px;
+  text-align: center;
+  color: rgba(black, .15);
+  @include mq(md) {
+    font-size: 140px;
+  }
+}

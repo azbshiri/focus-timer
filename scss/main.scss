@@ -1,0 +1,31 @@
+
+// ********************************************
+// Name: Main.scss
+// Description: import all partials
+// ********************************************
+
+
+
+// B A S E : variables, reset, mediaqueries, defaults
+// -----------------------------------------------------
+
+  @import "base/_variables";
+  @import "base/_normalize";
+  @import "base/_media-queries";
+  @import "base/_defaults";
+
+
+// U T I L I T I E S: Grid System, Containers, Helpers
+// ------------------------------------------------------
+
+  @import "utilities/_grid-system";  // Bootstrap 3
+  @import "utilities/_helpers-layout";
+  @import "utilities/_helpers-misc";
+
+
+// B L O C K S: reusable blocks / components
+// ------------------------------------------------------
+
+  @import "blocks/_buttons";
+  @import "blocks/_timer";
+  @import "blocks/_states";

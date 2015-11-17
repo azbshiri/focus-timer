@@ -1,0 +1,68 @@
+// **************************************************
+// Variables.scss
+// Description: To set global variables for scss
+// **************************************************
+
+
+
+// **************************************************
+// Global Colors
+// **************************************************
+
+
+// Colors
+// -------------------------
+
+$base: #C9329E;
+$base-dark: darken($base, 17%);
+$base-xdark: darken($base, 20%);
+$base-light: lighten($base, 25%);
+$base-xlight: lighten($base, 30%);
+
+$accent: #6400D8;
+$accent-dark: darken($accent, 10%);
+
+
+
+
+// **************************************************
+// Typography
+// **************************************************
+
+
+// Font Stacks
+// -------------------------
+
+// Two Basic Font Choices
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+
+
+// Font Weights
+// --------------------------
+
+$font-weight-light         : 300;
+$font-weight-normal        : 400;
+$font-weight-bold          : 700;
+
+
+// Font Sizes
+// ---------------------------
+
+$font-size-base:          16px !default;
+$font-size-h1:            floor(($font-size-base * 2.6));
+$font-size-h2:            floor(($font-size-base * 2.15));
+$font-size-h3:            ceil(($font-size-base * 1.7));
+$font-size-h4:            ceil(($font-size-base * 1.25));
+$font-size-h5:            $font-size-base;
+$font-size-h6:            ceil(($font-size-base * 0.85));
+
+
+// Line Height
+// -------------------------
+
+// global line height
+$line-height-base:        1.5;
+
+// heading line height
+$line-height-heading:     1.1;

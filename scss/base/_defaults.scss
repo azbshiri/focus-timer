@@ -1,0 +1,152 @@
+// **************************************************
+// Name: defaults.scss
+// Description: default styles
+// **************************************************
+
+
+// **************************************************
+// GLOBAL GLOBAL GLOBAL
+// **************************************************
+
+
+// Box-Sizing
+// -------------------------
+
+// Set all to border box!
+* { box-sizing: border-box; }
+
+
+// HTML and BODY
+// -------------------------
+
+body {
+  background: $base url('/img/noise.png');
+  padding-top: 40px;
+}
+
+// **************************************************
+// Typography
+// **************************************************
+
+// Headlines
+// -------------------------
+
+
+// Paragraphs
+// -------------------------
+
+// Nuke top margin and convert margin to rem
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+
+// Links
+// -------------------------
+
+a {
+  color: blue;
+  text-decoration: none;
+
+  &:hover, &:active {
+    color: blue;
+    text-decoration: underline;
+  }
+}
+
+
+// Various Semantic Type
+// -------------------------
+
+
+// Lists
+// -------------------------
+
+
+// Blockquote
+// ---------------------------
+
+
+
+// **************************************************
+// Other
+// **************************************************
+
+// Code
+// ---------------------
+
+
+// Figure
+// ----------------------
+
+
+// **************************************************
+// Images
+// **************************************************
+
+img {
+  // By default, img are `inline-block`. This assumes that and aligns vertically
+  vertical-align: middle;
+  // responsive images
+  max-width: 100%;
+}
+
+// Fix iOS button click
+// ----------------------
+[role="button"] {
+  cursor: pointer;
+}
+
+
+
+// **************************************************
+// Tables
+// **************************************************
+
+
+// table { }
+
+// th { }
+
+// tr { }
+
+// caption { }
+
+
+
+// **************************************************
+// Forms
+// **************************************************
+
+input {
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  border: none;
+  color: white;
+  letter-spacing: .05rem;
+  &:focus {
+    outline: 0;
+  }
+}
+
+::-webkit-input-placeholder { color: white;}
+:-moz-placeholder { color: white; }
+::-moz-placeholder { color: white; }
+:-ms-input-placeholder { color: white; }
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+// label {}
+// button,
+// select,
+// textarea { }
